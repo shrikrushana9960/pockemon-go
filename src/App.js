@@ -1,8 +1,11 @@
 import {  Divider, List, Skeleton } from "antd";
 import { useEffect, useState } from "react";
+import React from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
-import PockemonCard from "./components/PockemonCard";
-import SearchBox from "./components/SearchBox";
+
+const PockemonCard = React.lazy(() => import('./components/PockemonCard'));
+const SearchBox = React.lazy(() => import('./components/SearchBox'));
+
 const App = () => {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
