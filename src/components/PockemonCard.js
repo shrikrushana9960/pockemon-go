@@ -4,14 +4,16 @@ import React, { useEffect, useState } from "react";
 import styles from "./sub_styles/pockemoncard.module.scss";
 
 const PockemonCard = ({ item }) => {
-  const [loading,setLoading]=useState(true)
-  useEffect(()=>{
-    setTimeout(()=>{setLoading(false)},2000)
-  },[])
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
   return (
     <>
       {loading ? (
-        <Card  className={styles.container}about=""loading={loading}>
+        <Card className={styles.container} about="" loading={loading}>
           {" "}
           <Meta
             avatar={<Avatar src="https://joesch.moe/api/v1/random?key=1" />}
