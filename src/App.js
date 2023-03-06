@@ -1,18 +1,15 @@
-import { Button, Divider, List, Pagination, Skeleton, Spin } from "antd";
+import { Button, Divider, List, Skeleton, Spin } from "antd";
 import { useEffect, useState } from "react";
 import React from "react";
-import InfiniteScroll from "react-infinite-scroll-component";
-
-const PockemonCard = React.lazy(() => import("./components/PockemonCard"));
-const SearchBox = React.lazy(() => import("./components/SearchBox"));
-
+import InfiniteLoading from "./components/InfinteLoading"
+import PaginationPage from "./components/PaginationPage"
 const App = () => {
-  const [page, setShow] = useState(false);
+  const [page, setShow] = useState(true);
   return (
-    <div>
-      <Button>{page ? "InfiniteScroll" : "Pagination"}</Button>
+    <div style={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
+      <Button style={{float:"right"}} onClick={()=>setShow(item=>!item)} type="primary">{page ? "InfiniteScroll" : "Pagination"}</Button>
 
-      {page ? <Pagination /> : <InfiniteScroll />}
+      {page ? <PaginationPage /> : <InfiniteLoading/>}
     </div>
   );
 };

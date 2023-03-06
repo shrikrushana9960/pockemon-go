@@ -39,7 +39,7 @@ const InfinteLoading = () => {
         border: "1px solid rgba(140, 140, 140, 0.35)",
       }}
     >
-      <h1 style={{textAlign:"center"}}>Pockemon Go</h1>
+      <h1 style={{textAlign:"center"}}>Pockemon Go Infinite Loading</h1>
       <SearchBox/>
       {count && (
         <InfiniteScroll

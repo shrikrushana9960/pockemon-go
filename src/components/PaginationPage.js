@@ -2,9 +2,8 @@ import { Divider, List, Pagination, Skeleton, Spin } from "antd";
 import { useEffect, useState } from "react";
 import React from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
-
-const PockemonCard = React.lazy(() => import("./PockemonCard"));
-const SearchBox = React.lazy(() => import("./SearchBox"));
+import PockemonCard from "./PockemonCard";
+import SearchBox from "./SearchBox";
 
 const PaginationPage = () => {
   const [loading, setLoading] = useState(false);
@@ -43,7 +42,7 @@ const PaginationPage = () => {
         border: "1px solid rgba(140, 140, 140, 0.35)",
       }}
     >
-      <h1 style={{ textAlign: "center" }}>Pockemon Go</h1>
+      <h1 style={{ textAlign: "center" }}>Pockemon Go Pagination</h1>
       <SearchBox />
 
       {loading ? (
